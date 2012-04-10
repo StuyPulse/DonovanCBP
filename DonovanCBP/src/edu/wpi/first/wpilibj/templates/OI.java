@@ -1,6 +1,8 @@
 package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.templates.commands.DrivetrainSetGear;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -33,19 +35,21 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
-    private Joystick leftstick;
-    private Joystick rightstick;
+    private Joystick leftStick;
+    private Joystick rightStick;
 
     public OI() {
-        leftstick = new Joystick(RobotMap.LEFT_JOYSTICK_PORT);
-        rightstick = new Joystick(RobotMap.RIGHT_JOYSTICK_PORT);
+        leftStick = new Joystick(RobotMap.LEFT_JOYSTICK_PORT);
+        rightStick = new Joystick(RobotMap.RIGHT_JOYSTICK_PORT);
+        new JoystickButton(leftStick, 1).whenPressed(new DrivetrainSetGear(false));
+        new JoystickButton(leftStick, 2).whenPressed(new DrivetrainSetGear(true));
     }
 
     public Joystick getRightStick() {
-        return rightstick;
+        return rightStick;
     }
 
     public Joystick getLeftStick() {
-        return leftstick;
+        return leftStick;
     }
 }
