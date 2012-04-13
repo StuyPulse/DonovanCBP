@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Ant-Version: Apache Ant 1.8.1
-Created-By: 1.6.0_24-b07 (Sun Microsystems Inc.)
+Ant-Version: Apache Ant 1.8.2
+Created-By: 1.7.0_01-b08 (Oracle Corporation)
 MIDlet-Name: DonovanCBP
 MIDlet-Version: 1.0.0
 MIDlet-Vendor: FIRST

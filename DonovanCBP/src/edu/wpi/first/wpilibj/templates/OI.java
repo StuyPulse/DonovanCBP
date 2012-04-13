@@ -3,6 +3,7 @@ package edu.wpi.first.wpilibj.templates;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.templates.commands.DrivetrainSetGear;
+import edu.wpi.first.wpilibj.templates.commands.KickCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator

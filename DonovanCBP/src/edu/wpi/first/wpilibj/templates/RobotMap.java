@@ -26,6 +26,7 @@ public class RobotMap {
     
     /* Kicker */
     public static final int KICKER_MOTOR = 7;
+    public static final int KICKER_SENSOR = 1;
     public static final int KICKER_BUTTON = 1;
 
     /* Gear Shifting */
