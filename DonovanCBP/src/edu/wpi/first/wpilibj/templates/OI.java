@@ -41,8 +41,9 @@ public class OI {
     public OI() {
         leftStick = new Joystick(RobotMap.LEFT_JOYSTICK_PORT);
         rightStick = new Joystick(RobotMap.RIGHT_JOYSTICK_PORT);
-        new JoystickButton(leftStick, 1).whenPressed(new DrivetrainSetGear(false));
-        new JoystickButton(leftStick, 2).whenPressed(new DrivetrainSetGear(true));
+        new JoystickButton(leftStick, RobotMap.LOW_GEAR_BUTTON).whenPressed(new DrivetrainSetGear(false));
+        new JoystickButton(leftStick, RobotMap.HIGH_GEAR_BUTTON).whenPressed(new DrivetrainSetGear(true));
+        new JoystickButton(leftStick, RobotMap.KICKER_BUTTON).whileHeld(new KickCommand()); //TODO IMPLEMENT KICKCOMMAND
     }
 
     public Joystick getRightStick() {

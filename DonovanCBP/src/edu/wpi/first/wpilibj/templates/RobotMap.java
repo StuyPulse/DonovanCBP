@@ -21,10 +21,16 @@ public class RobotMap {
     /* Tank Drive */
     public static final int RIGHT_JOYSTICK_PORT = 1;
     public static final int LEFT_JOYSTICK_PORT = 2;
-    public static final int LEFT_MOTOR = 7; //1
+    public static final int LEFT_MOTOR = 1;
     public static final int RIGHT_MOTOR = 3;
+    
+    /* Kicker */
+    public static final int KICKER_MOTOR = 7;
+    public static final int KICKER_BUTTON = 1;
 
     /* Gear Shifting */
+    public static final int HIGH_GEAR_BUTTON = 3;
+    public static final int LOW_GEAR_BUTTON = 2;
     public static final int RIGHT_GEAR_SHIFTER = 5;
     public static final int LEFT_GEAR_SHIFTER = 6;
 
