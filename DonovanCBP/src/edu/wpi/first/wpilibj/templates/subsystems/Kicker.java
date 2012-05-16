@@ -1,3 +1,4 @@
+package edu.wpi.first.wpilibj.templates.subsystems;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -7,6 +8,8 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.templates.RobotMap;
+import edu.wpi.first.wpilibj.templates.commands.Cock;
 
 /**
  *NEED TO PORT OVER FOR CBP
@@ -23,14 +26,14 @@ public class Kicker extends Subsystem {
 
     public Kicker(int channel) {
         kicker = new Victor(channel);
-        limSwitch = new DigitalInput(1);
+        limSwitch = new DigitalInput(RobotMap.LIMSWITCH_CHANNEL);
         limSwitchBroken = false;
         cocked = false;
     }
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new Cock());
     }
 
     public void stop() {
@@ -70,12 +73,16 @@ public class Kicker extends Subsystem {
         }
         //System.out.println("cocking");
         double time = Timer.getFPGATimestamp();
-        while (limSwitch.get() != cocked && (Timer.getFPGATimestamp() - time < 2000000)) { //COCKED defined in Ports
+        while (limSwitch.get() == false && (Timer.getFPGATimestamp() - time < 2000000)) { //COCKED defined in Ports
             kicker.set(0.75);
             //may need a short delay?
 
         }
         kicker.set(0.0);
     }
+
+     public boolean getLimSwitch(){
+         return limSwitch.get();
+     }
 
 }
